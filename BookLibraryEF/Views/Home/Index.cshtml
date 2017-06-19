@@ -1,6 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+<!-- model IEnumerable<BookLibraryEF.Model.Book> -->
+
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
@@ -9,4 +9,8 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
+    @foreach (var item in Model)
+    {
+       <h2>@item.ID</h2>
+    }
 </div>
