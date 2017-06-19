@@ -16,10 +16,9 @@ namespace BookLibraryEF.Controllers
             _bookRepo= _book ;
              _categoryRepo= _category;
         }
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            Console.WriteLine(_bookRepo.Books);
-            return View();
+            return View(_bookRepo.Books);
         }
 
         public IActionResult About()
