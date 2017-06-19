@@ -3,13 +3,55 @@
 
 
 
-    @foreach (var item in Model)
-    {
-           
-    <h2>@item.ID</h2>
-    <h2>@item.Title</h2>
-    <h2>@item.Discription</h2>
-    <h2>@item.Price</h2>
-    <h2>@item.ImageUrl</h2>
-    }
+  @foreach (var item in Model)
+  {
 
+<div style="margin-top:40px">
+
+    <div class="well col-md-6">
+        <div class="row">
+            <div class="pull-right">
+                <img height="100" width="80" src="https://www.listchallenges.com/f/lists/7c6a48ca-d523-409e-ad51-5e652ee208ed.jpg" />
+
+            </div>
+
+                <dl class="dl-horizontal">
+                    <dt>ID;
+                        @item.ID
+
+                    </dt>
+                        <dt>Title:
+                            @item.Title
+
+                        </dt>
+                        <dt>
+                            @item.Price
+
+                        </dt>
+                        <dt>
+                            @item.Discription
+
+                        </dt>
+                    <dt>
+                        @item.PublishDate
+
+                    </dt>
+                    <dt>
+                        @item.CategoryId
+
+                    </dt>
+                    
+
+                    
+                </dl>
+
+            </div>
+
+        </div>
+
+    
+</div> }
+
+@*<p>
+
+    </p>*@
