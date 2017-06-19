@@ -10,5 +10,7 @@ namespace AspCoreLibraryEF.wwwroot.Models
         IEnumerable<Book> Books { get; }
         IEnumerable<Book> MustCommon { get; }
         Book GetBookById(int id);
+        Book GetBookByTitle(string title);
+
     }
 }
