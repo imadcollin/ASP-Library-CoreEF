@@ -1,37 +1,36 @@
-﻿
-<!-- model IEnumerable<BookLibraryEF.Model.Book> -->
+﻿<!-- model IEnumerable<BookLibraryEF.Model.Book> -->
 
 
 
-  @foreach (var item in Model)
-  {
+@foreach (var item in Model)
+{
 
-<div style="margin-top:40px">
+    <div style="margin-top:40px">
 
-    <div class="well col-md-6">
-        <div class="row">
-            <div class="pull-right">
-                <img height="100" width="80" src="https://www.listchallenges.com/f/lists/7c6a48ca-d523-409e-ad51-5e652ee208ed.jpg" />
+        <div class="well col-md-6">
+            <div class="row">
+                <div class="pull-right">
+                    <img height="100" width="80" src="@item.ImageUrl" />
 
-            </div>
+                </div>
 
                 <dl class="dl-horizontal">
-                    <dt>ID;
+                    <dt>
                         @item.ID
 
                     </dt>
-                        <dt>Title:
-                            @item.Title
+                    <dt>
+                        @item.Title
 
-                        </dt>
-                        <dt>
-                            @item.Price
+                    </dt>
+                    <dt>
+                        @item.Price
 
-                        </dt>
-                        <dt>
-                            @item.Discription
+                    </dt>
+                    <dt>
+                        @item.Discription
 
-                        </dt>
+                    </dt>
                     <dt>
                         @item.PublishDate
 
@@ -40,17 +39,15 @@
                         @item.CategoryId
 
                     </dt>
-                    
 
-                    
                 </dl>
 
             </div>
 
         </div>
 
-    
-</div> }
+
+    </div> }
 
 @*<p>
 
