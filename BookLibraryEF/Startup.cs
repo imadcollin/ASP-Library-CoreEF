@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using AspCoreLibraryEF.wwwroot.Models;
+using AspCoreLibraryEF.Models;
 
 namespace BookLibraryEF
 {
@@ -29,6 +31,12 @@ namespace BookLibraryEF
         {
             // Add framework services.
             services.AddMvc();
+            // Add Category service.
+            services.AddTransient<ICategoryRepo, CategoryMockData>();
+            // Add Book service.
+            services.AddTransient<IBookRepository, BookMockData>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
