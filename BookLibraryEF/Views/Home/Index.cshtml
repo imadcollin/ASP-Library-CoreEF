@@ -2,15 +2,14 @@
 <!-- model IEnumerable<BookLibraryEF.Model.Book> -->
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
+
     @foreach (var item in Model)
     {
-       <h2>@item.ID</h2>
+           
+    <h2>@item.ID</h2>
+    <h2>@item.Title</h2>
+    <h2>@item.Discription</h2>
+    <h2>@item.Price</h2>
+    <h2>@item.ImageUrl</h2>
     }
-</div>
+
