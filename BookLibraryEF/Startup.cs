@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AspCoreLibraryEF.wwwroot.Models;
 using AspCoreLibraryEF.Models;
-using Microsoft.CodeAnalysis;
-
+using Microsoft.EntityFrameworkCore;
 namespace BookLibraryEF
 {
     public class Startup
@@ -36,8 +31,9 @@ namespace BookLibraryEF
             services.AddTransient<ICategoryRepo, CategoryMockData>();
             // Add Book service.
             services.AddTransient<IBookRepository, BookMockData>();
-
-
+            // Add Dbcontext service.
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=EFGetStarted.AspNetCore.NewDb;Trusted_Connection=True;";
+            services.AddDbContext<Models.DBContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
